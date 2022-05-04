@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Bounce Ball</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"></script>
-</head>
-<body>
-   <script>
-       ballx =200;
-bally =50;
-balldx =3;
-balldy =0;
-Gravity=0.1;
-function setup() {
-  createCanvas(400, 400);
-}
 
-function draw() {
-  background(0,200,0);
-  circle(ballx,bally,20);
-  balldy +=Gravity;
-  bally +=balldy;
-  ballx +=balldx;
-  if(bally>390)
-    {
-      balldy *=-1; 
-      
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Bounce Ball</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"></script>
+</head>
+
+<body>
+  <h2>Bouncing Ball </h2>
+  <script>
+    ballx = 200;
+    bally = 50;
+    balldx = 3;
+    balldy = 0;
+    Gravity = 0.1;
+    function setup() {
+      createCanvas(400, 400);
     }
-    if(ballx>390)
-    {
-      balldx *=-1; 
-      
+
+    function draw() {
+      background(0, 0, 0);
+      circle(ballx, bally, 20);
+      balldy += Gravity;
+      bally += balldy;
+      ballx += balldx;
+      if (bally > 390) {
+        balldy *= -1;
+
+      }
+      if (ballx > 390) {
+        balldx *= -1;
+
+      }
+      if (ballx < 10) {
+        balldx *= -1;
+
+      }
     }
-  if(ballx<10)
-    {
-      balldx *=-1; 
-      
-    }
-}
-   </script> 
+  </script>
 </body>
+
 </html>
